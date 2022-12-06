@@ -39,7 +39,7 @@ df1$Type <- Type
 df1$bool <- factor(df1$bool,levels = c('YES','NO'))
 df1$Type <- factor(df1$Type,levels = c(' 0 < PFS <=  5',' 5 < PFS <= 10', '10 < PFS <= 15', '15 < PFS <= 21'))
 p2 <- ggplot(df1,mapping=aes(bool,fill=Type)) + 
-  geom_bar(width = 0.4) + 
+  geom_bar(width = 0.4,position='fill') + 
   labs(x = "",y="",fill = "",title = "PFS") + # 删除图例 坐标轴名称
   # 调色
   scale_fill_manual(breaks = c(' 0 < PFS <=  5',' 5 < PFS <= 10', '10 < PFS <= 15', '15 < PFS <= 21'), values = c("#0099B4FF","#AD002AFF","#FDAF91FF","#00468BFF")) +
@@ -64,7 +64,7 @@ df2$Type <- Type
 df2$bool <- factor(df2$bool,levels = c('YES','NO'))
 df2$Type <- factor(df2$Type,levels = c(' 0 < OS <=  5',' 5 < OS <= 10', '10 < OS <= 15', '15 < OS <= 21'))
 p3 <- ggplot(df2,mapping=aes(bool,fill=Type)) + 
-  geom_bar(width = 0.4) + 
+  geom_bar(width = 0.4,position='fill') + 
   labs(x = "",y="",fill = "",title = "OS") + # 删除图例 坐标轴名称
   # 调色
   scale_fill_manual(breaks = c(' 0 < OS <=  5',' 5 < OS <= 10', '10 < OS <= 15', '15 < OS <= 21'), values = c("#0099B4FF","#AD002AFF","#FDAF91FF","#00468BFF")) +
